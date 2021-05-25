@@ -372,7 +372,6 @@ namespace snakewinform {
 	private: int step = 10;//шаг
 	private: float updateInterval = 100;//игнтервал обновления
 	private: int score = 0;//счет 
-		   private: int some = 0;
 
 	//методы игры
 	private: void GeneratePositionFruit();
