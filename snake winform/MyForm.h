@@ -125,8 +125,8 @@ namespace snakewinform {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(493, 24);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(657, 28);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -137,52 +137,53 @@ namespace snakewinform {
 					this->ïàóçàÏðîäîëæèòüToolStripMenuItem, this->íàñòðîéêèToolStripMenuItem
 			});
 			this->ìåíþToolStripMenuItem->Name = L"ìåíþToolStripMenuItem";
-			this->ìåíþToolStripMenuItem->Size = System::Drawing::Size(53, 20);
+			this->ìåíþToolStripMenuItem->Size = System::Drawing::Size(65, 24);
 			this->ìåíþToolStripMenuItem->Text = L"Ìåíþ";
 			// 
 			// íîâàÿÈãðàToolStripMenuItem
 			// 
 			this->íîâàÿÈãðàToolStripMenuItem->Name = L"íîâàÿÈãðàToolStripMenuItem";
-			this->íîâàÿÈãðàToolStripMenuItem->Size = System::Drawing::Size(181, 22);
+			this->íîâàÿÈãðàToolStripMenuItem->Size = System::Drawing::Size(227, 26);
 			this->íîâàÿÈãðàToolStripMenuItem->Text = L"Íîâàÿ èãðà";
 			this->íîâàÿÈãðàToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::íîâàÿÈãðàToolStripMenuItem_Click);
 			// 
 			// ïàóçàÏðîäîëæèòüToolStripMenuItem
 			// 
 			this->ïàóçàÏðîäîëæèòüToolStripMenuItem->Name = L"ïàóçàÏðîäîëæèòüToolStripMenuItem";
-			this->ïàóçàÏðîäîëæèòüToolStripMenuItem->Size = System::Drawing::Size(181, 22);
+			this->ïàóçàÏðîäîëæèòüToolStripMenuItem->Size = System::Drawing::Size(227, 26);
 			this->ïàóçàÏðîäîëæèòüToolStripMenuItem->Text = L"Ïàóçà/Ïðîäîëæèòü";
 			this->ïàóçàÏðîäîëæèòüToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ïàóçàÏðîäîëæèòüToolStripMenuItem_Click);
 			// 
 			// íàñòðîéêèToolStripMenuItem
 			// 
 			this->íàñòðîéêèToolStripMenuItem->Name = L"íàñòðîéêèToolStripMenuItem";
-			this->íàñòðîéêèToolStripMenuItem->Size = System::Drawing::Size(181, 22);
+			this->íàñòðîéêèToolStripMenuItem->Size = System::Drawing::Size(227, 26);
 			this->íàñòðîéêèToolStripMenuItem->Text = L"Íàñòðîéêè";
 			this->íàñòðîéêèToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::íàñòðîéêèToolStripMenuItem_Click);
 			// 
 			// èíôîðìàöèÿÎáÈãðåToolStripMenuItem
 			// 
 			this->èíôîðìàöèÿÎáÈãðåToolStripMenuItem->Name = L"èíôîðìàöèÿÎáÈãðåToolStripMenuItem";
-			this->èíôîðìàöèÿÎáÈãðåToolStripMenuItem->Size = System::Drawing::Size(138, 20);
+			this->èíôîðìàöèÿÎáÈãðåToolStripMenuItem->Size = System::Drawing::Size(174, 24);
 			this->èíôîðìàöèÿÎáÈãðåToolStripMenuItem->Text = L"Èíôîðìàöèÿ îá èãðå";
 			this->èíôîðìàöèÿÎáÈãðåToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::èíôîðìàöèÿÎáÈãðåToolStripMenuItem_Click);
 			// 
 			// âûõîäToolStripMenuItem
 			// 
 			this->âûõîäToolStripMenuItem->Name = L"âûõîäToolStripMenuItem";
-			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(54, 20);
+			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(67, 24);
 			this->âûõîäToolStripMenuItem->Text = L"Âûõîä";
 			this->âûõîäToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::âûõîäToolStripMenuItem_Click);
 			// 
 			// GameData
 			// 
 			this->GameData->Controls->Add(this->Score);
-			this->GameData->Location = System::Drawing::Point(9, 25);
-			this->GameData->Margin = System::Windows::Forms::Padding(2);
+			this->GameData->ForeColor = System::Drawing::Color::DimGray;
+			this->GameData->Location = System::Drawing::Point(12, 31);
+			this->GameData->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->GameData->Name = L"GameData";
-			this->GameData->Padding = System::Windows::Forms::Padding(2);
-			this->GameData->Size = System::Drawing::Size(135, 49);
+			this->GameData->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->GameData->Size = System::Drawing::Size(180, 60);
 			this->GameData->TabIndex = 1;
 			this->GameData->TabStop = false;
 			this->GameData->Text = L"Äàííûå èãðû";
@@ -192,10 +193,10 @@ namespace snakewinform {
 			this->Score->AutoSize = true;
 			this->Score->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Score->Location = System::Drawing::Point(5, 18);
-			this->Score->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Score->ForeColor = System::Drawing::Color::DimGray;
+			this->Score->Location = System::Drawing::Point(7, 22);
 			this->Score->Name = L"Score";
-			this->Score->Size = System::Drawing::Size(72, 24);
+			this->Score->Size = System::Drawing::Size(95, 30);
 			this->Score->TabIndex = 0;
 			this->Score->Text = L"Ñ÷åò: 0";
 			// 
@@ -204,21 +205,20 @@ namespace snakewinform {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(14, 41);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(19, 50);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(166, 24);
+			this->label2->Size = System::Drawing::Size(219, 30);
 			this->label2->TabIndex = 0;
 			this->label2->Text = L"Ââåäèòå ñêîðîñòü";
 			// 
 			// SnakeSpeed
 			// 
-			this->SnakeSpeed->Location = System::Drawing::Point(184, 46);
-			this->SnakeSpeed->Margin = System::Windows::Forms::Padding(2);
+			this->SnakeSpeed->Location = System::Drawing::Point(245, 57);
+			this->SnakeSpeed->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->SnakeSpeed->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->SnakeSpeed->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->SnakeSpeed->Name = L"SnakeSpeed";
-			this->SnakeSpeed->Size = System::Drawing::Size(90, 20);
+			this->SnakeSpeed->Size = System::Drawing::Size(120, 22);
 			this->SnakeSpeed->TabIndex = 1;
 			this->SnakeSpeed->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
@@ -228,11 +228,11 @@ namespace snakewinform {
 			this->GameSettings->Controls->Add(this->Applay);
 			this->GameSettings->Controls->Add(this->SnakeSpeed);
 			this->GameSettings->Controls->Add(this->label2);
-			this->GameSettings->Location = System::Drawing::Point(88, 206);
-			this->GameSettings->Margin = System::Windows::Forms::Padding(2);
+			this->GameSettings->Location = System::Drawing::Point(117, 254);
+			this->GameSettings->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->GameSettings->Name = L"GameSettings";
-			this->GameSettings->Padding = System::Windows::Forms::Padding(2);
-			this->GameSettings->Size = System::Drawing::Size(291, 137);
+			this->GameSettings->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->GameSettings->Size = System::Drawing::Size(388, 169);
 			this->GameSettings->TabIndex = 2;
 			this->GameSettings->TabStop = false;
 			this->GameSettings->Text = L"Íàñòðîéêè";
@@ -242,10 +242,10 @@ namespace snakewinform {
 			// 
 			this->Applay->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->Applay->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->Applay->Location = System::Drawing::Point(109, 87);
-			this->Applay->Margin = System::Windows::Forms::Padding(2);
+			this->Applay->Location = System::Drawing::Point(145, 107);
+			this->Applay->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Applay->Name = L"Applay";
-			this->Applay->Size = System::Drawing::Size(71, 32);
+			this->Applay->Size = System::Drawing::Size(95, 39);
 			this->Applay->TabIndex = 2;
 			this->Applay->Text = L"Ïðèìåíèòü";
 			this->Applay->UseVisualStyleBackColor = false;
@@ -254,40 +254,40 @@ namespace snakewinform {
 			// Topbound
 			// 
 			this->Topbound->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Topbound->Location = System::Drawing::Point(0, 79);
-			this->Topbound->Margin = System::Windows::Forms::Padding(2);
+			this->Topbound->Location = System::Drawing::Point(0, 97);
+			this->Topbound->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Topbound->Name = L"Topbound";
-			this->Topbound->Size = System::Drawing::Size(493, 4);
+			this->Topbound->Size = System::Drawing::Size(657, 5);
 			this->Topbound->TabIndex = 3;
 			this->Topbound->TabStop = false;
 			// 
 			// Bottombound
 			// 
 			this->Bottombound->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Bottombound->Location = System::Drawing::Point(0, 490);
-			this->Bottombound->Margin = System::Windows::Forms::Padding(2);
+			this->Bottombound->Location = System::Drawing::Point(0, 603);
+			this->Bottombound->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Bottombound->Name = L"Bottombound";
-			this->Bottombound->Size = System::Drawing::Size(493, 4);
+			this->Bottombound->Size = System::Drawing::Size(657, 5);
 			this->Bottombound->TabIndex = 4;
 			this->Bottombound->TabStop = false;
 			// 
 			// Rightbound
 			// 
 			this->Rightbound->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Rightbound->Location = System::Drawing::Point(489, 80);
-			this->Rightbound->Margin = System::Windows::Forms::Padding(2);
+			this->Rightbound->Location = System::Drawing::Point(652, 98);
+			this->Rightbound->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Rightbound->Name = L"Rightbound";
-			this->Rightbound->Size = System::Drawing::Size(4, 414);
+			this->Rightbound->Size = System::Drawing::Size(5, 510);
 			this->Rightbound->TabIndex = 5;
 			this->Rightbound->TabStop = false;
 			// 
 			// Leftbound
 			// 
 			this->Leftbound->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Leftbound->Location = System::Drawing::Point(0, 80);
-			this->Leftbound->Margin = System::Windows::Forms::Padding(2);
+			this->Leftbound->Location = System::Drawing::Point(0, 98);
+			this->Leftbound->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Leftbound->Name = L"Leftbound";
-			this->Leftbound->Size = System::Drawing::Size(4, 414);
+			this->Leftbound->Size = System::Drawing::Size(5, 510);
 			this->Leftbound->TabIndex = 6;
 			this->Leftbound->TabStop = false;
 			// 
@@ -300,10 +300,10 @@ namespace snakewinform {
 			this->Game_over->AutoSize = true;
 			this->Game_over->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Game_over->Location = System::Drawing::Point(80, 130);
-			this->Game_over->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Game_over->ForeColor = System::Drawing::Color::DimGray;
+			this->Game_over->Location = System::Drawing::Point(107, 160);
 			this->Game_over->Name = L"Game_over";
-			this->Game_over->Size = System::Drawing::Size(302, 50);
+			this->Game_over->Size = System::Drawing::Size(378, 62);
 			this->Game_over->TabIndex = 7;
 			this->Game_over->Text = L"GAME OVER";
 			this->Game_over->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -314,10 +314,10 @@ namespace snakewinform {
 			this->Fruitcoord->AutoSize = true;
 			this->Fruitcoord->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Fruitcoord->Location = System::Drawing::Point(148, 33);
-			this->Fruitcoord->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Fruitcoord->ForeColor = System::Drawing::Color::DimGray;
+			this->Fruitcoord->Location = System::Drawing::Point(197, 41);
 			this->Fruitcoord->Name = L"Fruitcoord";
-			this->Fruitcoord->Size = System::Drawing::Size(209, 21);
+			this->Fruitcoord->Size = System::Drawing::Size(264, 25);
 			this->Fruitcoord->TabIndex = 8;
 			this->Fruitcoord->Text = L"Êîîðäèíàòû ôðóêòà : (x, y)";
 			// 
@@ -326,31 +326,34 @@ namespace snakewinform {
 			this->Snakecoord->AutoSize = true;
 			this->Snakecoord->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Snakecoord->Location = System::Drawing::Point(148, 53);
-			this->Snakecoord->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Snakecoord->ForeColor = System::Drawing::Color::DimGray;
+			this->Snakecoord->Location = System::Drawing::Point(197, 65);
 			this->Snakecoord->Name = L"Snakecoord";
-			this->Snakecoord->Size = System::Drawing::Size(204, 21);
+			this->Snakecoord->Size = System::Drawing::Size(259, 25);
 			this->Snakecoord->TabIndex = 9;
 			this->Snakecoord->Text = L"Êîîðäèíàòû çìåéêè: (x, y)";
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::SeaGreen;
+			this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(7)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(47)));
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
-			this->pictureBox1->Location = System::Drawing::Point(393, 25);
+			this->pictureBox1->Location = System::Drawing::Point(524, 31);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(100, 50);
+			this->pictureBox1->Size = System::Drawing::Size(133, 62);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 10;
 			this->pictureBox1->TabStop = false;
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::SeaGreen;
-			this->ClientSize = System::Drawing::Size(493, 494);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(7)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(47)));
+			this->ClientSize = System::Drawing::Size(657, 608);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->Snakecoord);
 			this->Controls->Add(this->Fruitcoord);
@@ -365,7 +368,7 @@ namespace snakewinform {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Hide;

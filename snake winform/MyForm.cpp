@@ -77,7 +77,7 @@ void snakewinform::MyForm::Eating()
 		//добавляем новыый элемент змейке
 		snake[score] = gcnew PictureBox();
 		snake[score]->Location = Point(snake[score - 1]->Location.X + step * direction.X, snake[score - 1]->Location.Y - step * direction.Y);
-		snake[score]->BackColor = Color::Red;
+		snake[score]->BackColor = Color::Gray;
 		snake[score]->Width = step;
 		snake[score]->Height = step;
 		this->Controls->Add(snake[score]);
@@ -140,7 +140,7 @@ void snakewinform::MyForm::NewGame()
 	snake = gcnew array <PictureBox^, 1>(100);
 	snake[0] = gcnew PictureBox();
 	snake[0]->Location = Point(250, 250);
-	snake[0]->BackColor = Color::Black;//голова будет зеленой
+	snake[0]->BackColor = Color::Black;//голова будет черной
 	snake[0]->Width = step;
 	snake[0]->Height = step;
 
