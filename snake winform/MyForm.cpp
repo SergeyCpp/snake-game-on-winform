@@ -140,7 +140,7 @@ void snakewinform::MyForm::NewGame()
 	snake = gcnew array <PictureBox^, 1>(100);
 	snake[0] = gcnew PictureBox();
 	snake[0]->Location = Point(250, 250);
-	snake[0]->BackColor = Color::Green;//голова будет зеленой
+	snake[0]->BackColor = Color::Black;//голова будет зеленой
 	snake[0]->Width = step;
 	snake[0]->Height = step;
 

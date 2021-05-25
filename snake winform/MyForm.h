@@ -60,6 +60,8 @@ namespace snakewinform {
 	private: System::Windows::Forms::Label^ Game_over;
 	private: System::Windows::Forms::Label^ Fruitcoord;
 	private: System::Windows::Forms::Label^ Snakecoord;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -79,6 +81,7 @@ namespace snakewinform {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ìåíþToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->íîâàÿÈãðàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -100,6 +103,7 @@ namespace snakewinform {
 			this->Game_over = (gcnew System::Windows::Forms::Label());
 			this->Fruitcoord = (gcnew System::Windows::Forms::Label());
 			this->Snakecoord = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->menuStrip1->SuspendLayout();
 			this->GameData->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SnakeSpeed))->BeginInit();
@@ -108,10 +112,12 @@ namespace snakewinform {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Bottombound))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rightbound))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Leftbound))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
 			// 
+			this->menuStrip1->BackColor = System::Drawing::SystemColors::GradientInactiveCaption;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->ìåíþToolStripMenuItem,
@@ -218,6 +224,7 @@ namespace snakewinform {
 			// 
 			// GameSettings
 			// 
+			this->GameSettings->BackColor = System::Drawing::SystemColors::InactiveBorder;
 			this->GameSettings->Controls->Add(this->Applay);
 			this->GameSettings->Controls->Add(this->SnakeSpeed);
 			this->GameSettings->Controls->Add(this->label2);
@@ -233,13 +240,15 @@ namespace snakewinform {
 			// 
 			// Applay
 			// 
+			this->Applay->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->Applay->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->Applay->Location = System::Drawing::Point(109, 87);
 			this->Applay->Margin = System::Windows::Forms::Padding(2);
 			this->Applay->Name = L"Applay";
 			this->Applay->Size = System::Drawing::Size(71, 32);
 			this->Applay->TabIndex = 2;
 			this->Applay->Text = L"Ïðèìåíèòü";
-			this->Applay->UseVisualStyleBackColor = true;
+			this->Applay->UseVisualStyleBackColor = false;
 			this->Applay->Click += gcnew System::EventHandler(this, &MyForm::Applay_Click);
 			// 
 			// Topbound
@@ -305,7 +314,7 @@ namespace snakewinform {
 			this->Fruitcoord->AutoSize = true;
 			this->Fruitcoord->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Fruitcoord->Location = System::Drawing::Point(171, 25);
+			this->Fruitcoord->Location = System::Drawing::Point(148, 33);
 			this->Fruitcoord->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Fruitcoord->Name = L"Fruitcoord";
 			this->Fruitcoord->Size = System::Drawing::Size(209, 21);
@@ -317,18 +326,32 @@ namespace snakewinform {
 			this->Snakecoord->AutoSize = true;
 			this->Snakecoord->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Snakecoord->Location = System::Drawing::Point(171, 54);
+			this->Snakecoord->Location = System::Drawing::Point(148, 53);
 			this->Snakecoord->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Snakecoord->Name = L"Snakecoord";
 			this->Snakecoord->Size = System::Drawing::Size(204, 21);
 			this->Snakecoord->TabIndex = 9;
 			this->Snakecoord->Text = L"Êîîðäèíàòû çìåéêè: (x, y)";
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::SeaGreen;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
+			this->pictureBox1->Location = System::Drawing::Point(393, 25);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(100, 50);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 10;
+			this->pictureBox1->TabStop = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::SeaGreen;
 			this->ClientSize = System::Drawing::Size(493, 494);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->Snakecoord);
 			this->Controls->Add(this->Fruitcoord);
 			this->Controls->Add(this->Game_over);
@@ -339,6 +362,7 @@ namespace snakewinform {
 			this->Controls->Add(this->GameSettings);
 			this->Controls->Add(this->GameData);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
@@ -358,6 +382,7 @@ namespace snakewinform {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Bottombound))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Rightbound))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Leftbound))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
