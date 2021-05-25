@@ -301,6 +301,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 	return System::Void();
 }
 
+//обновление игры
 void snakewinform::MyForm::GameForm_Update(Object^ obgect, EventArgs^ e)
 {
 	if (!die && play)
