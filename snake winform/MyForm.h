@@ -199,6 +199,7 @@ namespace snakewinform {
 			// Game_over
 			// 
 			this->Game_over->AutoSize = true;
+			this->Game_over->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Game_over->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Game_over->ForeColor = System::Drawing::Color::DimGray;
@@ -212,8 +213,10 @@ namespace snakewinform {
 			// 
 			// MyFormMainFormMenu
 			// 
-			this->MyFormMainFormMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(7)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(47)));
+			this->MyFormMainFormMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+				static_cast<System::Int32>(static_cast<System::Byte>(24)), static_cast<System::Int32>(static_cast<System::Byte>(78)));
+			this->MyFormMainFormMenu->FlatAppearance->BorderSize = 0;
+			this->MyFormMainFormMenu->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->MyFormMainFormMenu->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->MyFormMainFormMenu->ForeColor = System::Drawing::Color::DimGray;
@@ -229,8 +232,8 @@ namespace snakewinform {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(7)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(47)));
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)), static_cast<System::Int32>(static_cast<System::Byte>(24)),
+				static_cast<System::Int32>(static_cast<System::Byte>(78)));
 			this->ClientSize = System::Drawing::Size(657, 608);
 			this->Controls->Add(this->Score);
 			this->Controls->Add(this->MyFormMainFormMenu);
@@ -264,10 +267,12 @@ namespace snakewinform {
 	//данные об игре
 	private: PictureBox^ fruit;//фрукт
 	private: array<PictureBox^>^ snake;//зиея
+	private: Bitmap^ bit;
+	private: Bitmap^ bit2;
 	private: bool play;//игра
 	private: bool die;//смерть
 	private: bool firstLaunch;//первый запуск
-	private: int step = 10;//шаг
+	private: int step = 10;//шаг сетки
 	private: float updateInterval = 80;//интервал обновления
 	private: int score = 0;//счет 
 
