@@ -134,7 +134,7 @@ void snakewinform::MyForm::NewGame()
 	//создаем змейку
 	snake = gcnew array <PictureBox^, 1>(400);
 	snake[0] = gcnew PictureBox();
-	bit = gcnew Bitmap("C:/Users/abc/Desktop/обои/snake head up.jpg");
+	bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head up.jpg");
 	snake[0]->Image = bit;
 	snake[0]->Location = Point(250, 250);
 	//snake[0]->BackColor = Color::Black;//голова будет черной
@@ -145,7 +145,7 @@ void snakewinform::MyForm::NewGame()
 
 	//создаем фрукт
 	fruit = gcnew PictureBox();
-	bit = gcnew Bitmap("C:/Users/abc/Desktop/обои/apple for snake.jpg");
+	bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/apple for snake.jpg");
 	fruit->Image = bit;
 	//fruit->SizeMode = PictureBoxSizeMode::StretchImage;
 	//fruit->BackColor = Color::Blue;
@@ -237,7 +237,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.X = 1;
 			direction.Y = 0;
-			bit = gcnew Bitmap("C:/Users/abc/Desktop/обои/snake head right.jpg");
+			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head right.jpg");
 			snake[0]->Image = bit;
 		
 		}
@@ -249,7 +249,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.X = -1;
 			direction.Y = 0;
-			bit = gcnew Bitmap("C:/Users/abc/Desktop/обои/snake head left.jpg");
+			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head left.jpg");
 			snake[0]->Image = bit;
 		}
 		
@@ -260,7 +260,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.Y = -1;
 			direction.X = 0;
-			bit = gcnew Bitmap("C:/Users/abc/Desktop/обои/snake head up.jpg");
+			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head up.jpg");
 			snake[0]->Image = bit;
 		}
 		
@@ -271,7 +271,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.Y = 1;
 			direction.X = 0;
-			bit = gcnew Bitmap("C:/Users/abc/Desktop/обои/snake head down.jpg");
+			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head down.jpg");
 			snake[0]->Image = bit;
 		}
 		
