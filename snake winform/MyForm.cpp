@@ -1,20 +1,9 @@
 ﻿#include "pch.h"
 #include "MyForm.h"
+#include "MainForm.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
-
-[STAThreadAttribute]
-void main(array<String^>^ args) {
-	
-	Application::EnableVisualStyles();
-	Application::SetCompatibleTextRenderingDefault(false);
-
-	
-	snakewinform::MyForm form;
-	Application::Run(% form);
-}
-
 
 struct Vector2 {
 	int X, Y;
@@ -47,19 +36,21 @@ void snakewinform::MyForm::GeneratePositionFruit()
 	positionFruit.X = rand->Next(10, gameArea.X - 50);//10 - смещение относительно боков формы
 	positionFruit.Y = rand->Next(120, gameArea.Y - 50);//120 - смещение верхней позиции относительно верха формы
 
-	//проверка что фрукт не создался на змейке
-	for (int i = 0; i < score; i++) {
-		if (positionFruit.X == snake[i]->Location.X &&
-			positionFruit.Y == snake[i]->Location.Y)
-			GeneratePositionFruit();
-	}
-
 	//преобразуем значение чтобы было кратно шагу
 	int tempX = positionFruit.X % step;
 	positionFruit.X -= tempX;
 
 	int tempY = positionFruit.Y % step;
 	positionFruit.Y -= tempY;
+
+	//проверка что фрукт не создался на змейке
+	for (int i = 0; i < score; i++) 
+	{
+		if (positionFruit.X == snake[i]->Location.X && positionFruit.Y == snake[i]->Location.Y)
+		{
+			GeneratePositionFruit();
+		}
+	}
 
 	//присваеваем позицию фрукту
 	fruit->Location = Point(positionFruit.X, positionFruit.Y);
@@ -111,6 +102,8 @@ void snakewinform::MyForm::GameOver()
 	die = true;
 
 	Game_over->Visible = true;
+	MyFormMainFormMenu->Visible = true;
+
 }
 
 void snakewinform::MyForm::NewGame()
@@ -166,7 +159,7 @@ void snakewinform::MyForm::NewGame()
 
 	//скрываем ненужные компоненты на форме
 	Game_over->Visible = false;
-	GameSettings->Visible = false;
+	MyFormMainFormMenu->Visible = false;
 }
 
 void snakewinform::MyForm::CheckBorders()
@@ -181,8 +174,8 @@ void snakewinform::MyForm::CheckBorders()
 		GameOver();
 	}
 
-	Fruitcoord->Text = "Координаты фрукта: (" + Convert::ToString(fruit->Location.X) + ", " + Convert::ToString(fruit->Location.Y) + ")";
-	Snakecoord->Text = "Координаты змейки: (" + Convert::ToString(snake[0]->Location.X) + ", " + Convert::ToString(snake[0]->Location.Y) + ")";
+	//Fruitcoord->Text = "Координаты фрукта: (" + Convert::ToString(fruit->Location.X) + ", " + Convert::ToString(fruit->Location.Y) + ")";
+	//Snakecoord->Text = "Координаты змейки: (" + Convert::ToString(snake[0]->Location.X) + ", " + Convert::ToString(snake[0]->Location.Y) + ")";
 }
 
 //реализация событий
@@ -206,27 +199,6 @@ System::Void snakewinform::MyForm::паузаПродолжитьToolStripMenuIt
 	
 }
 
-System::Void snakewinform::MyForm::настройкиToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	if (GameSettings->Visible == false) {
-		//приостановить игру
-		play = false;
-
-		Applay->Enabled = true;
-		SnakeSpeed->Enabled = true;
-		GameSettings->Visible = true;
-	}
-	else {
-		//запустить игру
-		play = true;
-		timer->Start();
-
-		Applay->Enabled = false;
-		SnakeSpeed->Enabled = false;
-		GameSettings->Visible = false;
-	}
-}
-
 System::Void snakewinform::MyForm::информацияОбИгреToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (play) {
@@ -242,26 +214,18 @@ System::Void snakewinform::MyForm::выходToolStripMenuItem_Click(System::Obj
 	Application::Exit();
 }
 
-System::Void snakewinform::MyForm::Applay_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void snakewinform::MyForm::MyFormMainFormMenu_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	updateInterval = Convert::ToSingle(SnakeSpeed->Value);
-	timer->Interval = updateInterval;
-
-	Applay->Enabled = false;
-	SnakeSpeed->Enabled = false;
-	GameSettings->Visible = false;
-
-	//запускаем игру
-	play = true;
-	timer->Start();
-
-	return System::Void();
+	MainForm^ mainmenuform = gcnew MainForm();
+	this->Hide();
+	mainmenuform->Show();
 }
 
 System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
+	
 	//считываем нажатую клавишу
-	if (e->KeyCode.ToString() == "Right")
+	if (e->KeyCode.ToString() == "Right")//39
 	{
 		if (direction.X != -1)
 		{
@@ -270,7 +234,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		}
 
 	}
-	else if (e->KeyCode.ToString() == "Left") 
+	else if (e->KeyCode.ToString() == "Left")//37
 	{
 		if (direction.X != 1)
 		{
@@ -279,7 +243,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		}
 		
 	}
-	else if (e->KeyCode.ToString() == "Up") 
+	else if (e->KeyCode.ToString() == "Up")//38
 	{
 		if (direction.Y != 1)
 		{
@@ -288,7 +252,7 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		}
 		
 	}
-	else if (e->KeyCode.ToString() == "Down") 
+	else if (e->KeyCode.ToString() == "Down")//40
 	{
 		if (direction.Y != -1)
 		{
@@ -310,11 +274,6 @@ void snakewinform::MyForm::GameForm_Update(Object^ obgect, EventArgs^ e)
 		Eating();//проверка что съели фрукт
 		EatYourself();//проверка что съели себя
 		CheckBorders();//проверка на столкновение со стеной 
-	}
-	else if (die && play)
-	{
-		timer->Stop();
-		MessageBox::Show("Игра окончена!", "Внимание!");
 	}
 	else if (!play && !die)
 	{
