@@ -8,6 +8,7 @@ namespace snakewinform {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Media;
 
 	/// <summary>
 	/// Сводка для MainForm
@@ -15,13 +16,7 @@ namespace snakewinform {
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
-		MainForm(void)
-		{
-			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
-		}
+		MainForm(void);
 
 	protected:
 		/// <summary>
@@ -38,6 +33,7 @@ namespace snakewinform {
 	protected:
 	private: System::Windows::Forms::Button^ MainFormExitButton;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 
 	private:
@@ -129,10 +125,11 @@ namespace snakewinform {
 
 		}
 #pragma endregion
-
+		//данные для формы меню
+		SoundPlayer^ simpleSound;
 
 	private: System::Void MainFormNewGameButton_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void MainFormExitButton_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+};
 }

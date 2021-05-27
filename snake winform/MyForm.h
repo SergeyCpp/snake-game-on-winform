@@ -8,6 +8,9 @@ namespace snakewinform {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Media;
+	using namespace System::IO;
+
 
 	/// <summary>
 	/// Сводка для MyForm
@@ -266,9 +269,8 @@ namespace snakewinform {
 #pragma endregion
 	//данные об игре
 	private: PictureBox^ fruit;//фрукт
-	private: array<PictureBox^>^ snake;//зиея
+	private: array<PictureBox^>^ snake;//массив змеё
 	private: Bitmap^ bit;
-	private: Bitmap^ bit2;
 	private: bool play;//игра
 	private: bool die;//смерть
 	private: bool firstLaunch;//первый запуск
