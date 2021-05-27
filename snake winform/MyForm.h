@@ -8,6 +8,7 @@ namespace snakewinform {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Media;
 
 	/// <summary>
 	/// Сводка для MyForm

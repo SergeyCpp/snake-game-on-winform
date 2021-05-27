@@ -5,6 +5,7 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
+
 struct Vector2 {
 	int X, Y;
 };
@@ -26,7 +27,6 @@ snakewinform::MyForm::MyForm(void)
 	NewGame();//новая игра
 	
 }
-
 
 //реализаци действий игры
 void snakewinform::MyForm::GeneratePositionFruit()
@@ -68,7 +68,7 @@ void snakewinform::MyForm::Eating()
 		//добавляем новыый элемент змейке
 		snake[score] = gcnew PictureBox();
 		snake[score]->Location = Point(snake[score - 1]->Location.X + step * direction.X, snake[score - 1]->Location.Y - step * direction.Y);
-		snake[score]->BackColor = Color::Black;
+		snake[score]->BackColor = Color::Silver;
 		snake[score]->Width = step;
 		snake[score]->Height = step;
 		this->Controls->Add(snake[score]);
@@ -134,10 +134,10 @@ void snakewinform::MyForm::NewGame()
 	//создаем змейку
 	snake = gcnew array <PictureBox^, 1>(400);
 	snake[0] = gcnew PictureBox();
-	bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head up.jpg");
-	snake[0]->Image = bit;
+	//bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head up.jpg");
+	//snake[0]->Image = bit;
 	snake[0]->Location = Point(250, 250);
-	//snake[0]->BackColor = Color::Black;//голова будет черной
+	snake[0]->BackColor = Color::SlateGray;//цвет головы
 	snake[0]->Width = step;
 	snake[0]->Height = step;
 	
@@ -147,7 +147,7 @@ void snakewinform::MyForm::NewGame()
 	fruit = gcnew PictureBox();
 	bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/apple for snake.jpg");
 	fruit->Image = bit;
-	//fruit->SizeMode = PictureBoxSizeMode::StretchImage;
+	fruit->SizeMode = PictureBoxSizeMode::StretchImage;
 	//fruit->BackColor = Color::Blue;
 	fruit->Width = step;
 	fruit->Height = step;
@@ -237,8 +237,8 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.X = 1;
 			direction.Y = 0;
-			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head right.jpg");
-			snake[0]->Image = bit;
+			//bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head right.jpg");
+			//snake[0]->Image = bit;
 		
 		}
 		
@@ -249,8 +249,8 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.X = -1;
 			direction.Y = 0;
-			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head left.jpg");
-			snake[0]->Image = bit;
+			//bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head left.jpg");
+			//snake[0]->Image = bit;
 		}
 		
 	}
@@ -260,8 +260,8 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.Y = -1;
 			direction.X = 0;
-			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head up.jpg");
-			snake[0]->Image = bit;
+			//bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head up.jpg");
+			//snake[0]->Image = bit;
 		}
 		
 	}
@@ -271,8 +271,8 @@ System::Void snakewinform::MyForm::MyForm_KeyDown(System::Object^ sender, System
 		{
 			direction.Y = 1;
 			direction.X = 0;
-			bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head down.jpg");
-			snake[0]->Image = bit;
+			//bit = gcnew Bitmap("C:/Users/abc/source/repos/snake winform/res/snake head down.jpg");
+			//snake[0]->Image = bit;
 		}
 		
 	}
@@ -296,3 +296,4 @@ void snakewinform::MyForm::GameForm_Update(Object^ obgect, EventArgs^ e)
 		MessageBox::Show("Игра приостановлена!", "Внимание!");
 	}
 }
+
