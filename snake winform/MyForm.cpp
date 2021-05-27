@@ -105,7 +105,6 @@ void snakewinform::MyForm::GameOver()
 
 	Game_over->Visible = true;
 	MyFormMainFormMenu->Visible = true;
-
 }
 
 void snakewinform::MyForm::NewGame()
@@ -293,7 +292,6 @@ void snakewinform::MyForm::GameForm_Update(Object^ obgect, EventArgs^ e)
 	else if (!play && !die)
 	{
 		timer->Stop();
-		MessageBox::Show("Игра приостановлена!", "Внимание!");
 	}
 }
 

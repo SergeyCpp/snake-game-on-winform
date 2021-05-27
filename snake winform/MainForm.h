@@ -35,6 +35,7 @@ namespace snakewinform {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 
+
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
@@ -130,5 +131,5 @@ namespace snakewinform {
 	private: System::Void MainFormNewGameButton_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void MainFormExitButton_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+};
 }

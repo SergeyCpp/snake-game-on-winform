@@ -30,6 +30,7 @@ snakewinform::MainForm::MainForm(void)
 
 System::Void snakewinform::MainForm::MainFormNewGameButton_Click(System::Object^ sender, System::EventArgs^ e)
 {
+	//создаем форму с игрой и скрываем меню
     MyForm^ form = gcnew MyForm();
     this->Hide();
     form->Show();
